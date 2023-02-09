@@ -1,3 +1,65 @@
+
+let  video =document.getElementById("video");
+let  canvas =document.getElementById("canvas");
+
+let ctx=canvas.getContext("2d");
+let model;
+const  setupCamera = ()=>{
+   navigator.mediaDevices
+   .getUserMedia({
+    video:{width:600,height:400},
+    audio:false,
+   })
+   .then(stream=>{
+      video.srcObject=stream;
+
+   });
+};
+
+const  detectFaces=async () =>{
+   const prediction= await model.estimateFaces(video,false);
+   console.log(prediction);
+   ctx.drawImage(video, 0, 0, 600, 400);
+   prediction.forEach(pred => {
+
+    ctx.beginPath();
+    ctx.lineWidth="4";
+    ctx.strokeStyle="blue";
+    ctx.rect(
+      pred.topLeft[0],
+      pred.topLeft[1],
+      pred.bottomRight[0]-pred.topLeft[0],
+      pred.bottomRight[1]-pred.topLeft[1],
+
+    );
+    
+    ctx.stroke()
+    
+   });
+};
+setupCamera();  
+video.addEventListener("loadeddata",async()=>{
+    model=await blazeface.load();
+    // detectFaces();
+    setInterval(detectFaces,100)
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // <!DOCTYPE html>
 // <html>
 // <head>
@@ -19,11 +81,11 @@
 // </head>
 // <body>
 // 	<script>
-        const para = document.createElement("button");
-            para.innerText = "Button";
-            document.body.appendChild(para);
+        // const para = document.createElement("button");
+        //     para.innerText = "Button";
+        //     document.body.appendChild(para);
 
-			para.addEventListener("click", function(){ alert("Hello World!"); });
+		// 	para.addEventListener("click", function(){ alert("Hello World!"); });
 //     </script>
 // </body>
 // </html>
