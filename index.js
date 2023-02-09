@@ -1,6 +1,28 @@
 
-let  video =document.getElementById("video");
-let  canvas =document.getElementById("canvas");
+
+
+
+
+
+    
+    document.body.innerHTML += '<video id="video" autoplay style="display:none"></video>'; // the += means we add this to the inner HTML of body
+    document.getElementById('video').innerHTML = '<video id="someId" autoplay style="display:none"></video>'; // replaces the inner HTML of #someBox to a canvas
+    const video = document.getElementById('video');
+
+    
+    document.body.innerHTML += '<canvas id="canvas" width="600px" height="400px" ></canvas>'; // the += means we add this to the inner HTML of body
+    document.getElementById('canvas').innerHTML = '<canvas id="someId" width="600px" height="400px"></canvas>'; // replaces the inner HTML of #someBox to a canvas
+    const canvas = document.getElementById('canvas');
+
+
+
+   //  var canvas = document.createElement('canvas');
+   //  canvas.id = 'someId';
+
+    
+   //  document.body.appendChild(canvas); // adds the canvas to the body element
+   //  document.getElementById('someBox').appendChild(canvas); // adds the canvas to #someBox
+
 
 let ctx=canvas.getContext("2d");
 let model;
