@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/F2020-hub/cdnlink#readme",
   "dependencies": {
-    "@tensorflow-models/blazeface": "^0.0.7"
+    "@tensorflow-models/blazeface": "^0.0.7",
+    "@tensorflow/tfjs": "^4.2.0"
   }
 }
