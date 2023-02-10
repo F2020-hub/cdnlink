@@ -1,3 +1,6 @@
+
+
+
 document.body.innerHTML +=
   '<video id="video" autoplay style="display:none"></video>'; // the += means we add this to the inner HTML of body
 document.getElementById("video").innerHTML =

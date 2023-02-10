@@ -1,0 +1,25 @@
+{
+  "name": "cdnlink",
+  "version": "1.0.0",
+  "description": "testing phase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/F2020-hub/cdnlink.git"
+  },
+  "keywords": [
+    "webcame"
+  ],
+  "author": "MD_Fakher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/F2020-hub/cdnlink/issues"
+  },
+  "homepage": "https://github.com/F2020-hub/cdnlink#readme",
+  "dependencies": {
+    "@tensorflow-models/blazeface": "^0.0.7"
+  }
+}
